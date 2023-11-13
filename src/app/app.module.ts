@@ -3,18 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SurveysComponent } from './surveys/surveys.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SurveyListComponent } from './survey-list/survey-list.component';
+import { SurveyService } from './services/survey.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SurveyFormComponent } from './survey-form/survey-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SurveysComponent
+    NavbarComponent,
+    SurveyListComponent,
+    SurveyFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    SurveyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

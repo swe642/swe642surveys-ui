@@ -1,0 +1,15 @@
+.gmu-green-bg {
+  background-color: #006633;
+}
+
+ /* custom color for button */
+ .a-nav-button {
+  background-color: #006633;
+  color: #FFCC33;
+  border: .25px solid transparent;
+}
+
+/* custom color for button when it is hovered */
+.a-nav-button:hover {
+  border: .25px solid #FFCC33;
+}

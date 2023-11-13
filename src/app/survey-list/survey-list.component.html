@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <h4>Surveys</h4>
+    <div class="me-3 justify-content-end">
+      <p>
+        We value your feedback about your campus visit. Please take a moment to complete our survey: 
+        <a href="survey/form">Survey Form Link <i class="fa fa-link" aria-hidden="true"></i></a>
+      </p>
+      <p *ngIf="surveys.length>0">Note: Click on survey to edit</p>
+    </div>
+    <div class="col-md-3 mt-3" *ngFor="let survey of surveys">
+      <div class="card mb-4 shadow-sm" (click)="openEditSurvey(survey.studentId)">
+        <div class="card-header">
+          <strong class="my-0 font-weight-normal">{{ survey.firstName }} {{ survey.lastName }}</strong>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <strong>Id:</strong> {{ survey.studentId }}<br>
+            <strong>Date:</strong> {{ survey.dateOfSurvey }}<br>
+            <strong>City:</strong> {{ survey.city }}<br>
+            <!-- Add more details as needed -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
