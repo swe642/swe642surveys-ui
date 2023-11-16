@@ -3,7 +3,7 @@
     <h4>Surveys</h4>
     <div class="me-3 justify-content-end">
       <p>
-        We value your feedback about your campus visit. Please take a moment to complete our survey: 
+        We value your feedback about your campus visit. Please take a moment to complete our survey:
         <a href="survey/form">Survey Form Link <i class="fa fa-link" aria-hidden="true"></i></a>
       </p>
       <p *ngIf="surveys.length>0">Note: Click on survey to edit</p>
@@ -11,17 +11,42 @@
     <div class="col-md-3 mt-3" *ngFor="let survey of surveys">
       <div class="card mb-4 shadow-sm" (click)="openEditSurvey(survey.studentId)">
         <div class="card-header">
-          <strong class="my-0 font-weight-normal">{{ survey.firstName }} {{ survey.lastName }}</strong>
+          <strong class="my-0 font-weight-normal d-flex justify-content-between align-items-center">
+            {{ survey.firstName }} {{ survey.lastName }}
+            <button type="button" class="btn btn-sm a-button-remove" (click)="$event.stopPropagation(); deleteSurvey(survey.studentId); ">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+          </strong>  
+          <div class="justify-content-end">
+          </div>
         </div>
         <div class="card-body">
           <p class="card-text">
             <strong>Id:</strong> {{ survey.studentId }}<br>
             <strong>Date:</strong> {{ survey.dateOfSurvey }}<br>
-            <strong>City:</strong> {{ survey.city }}<br>
-            <!-- Add more details as needed -->
+            <strong>City:</strong> {{ survey.city }}
           </p>
         </div>
       </div>
     </div>
   </div>
 </div>
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#messageModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal" id="messageModal" tabindex="-1" aria-labelledby="messageModal" aria-hidden="true" #messageModal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="messageModal">Surveys</h5>
+          <button type="button" class="btn-close" #modalClose data-bs-dismiss="modal" aria-label="Close" routerLink="/survey"></button>
+        </div>
+        <div class="modal-body">
+          Survey <span id="deletedId"></span> deleted successfully!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="getSurveys()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

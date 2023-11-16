@@ -1,3 +1,14 @@
 .card {
   cursor: pointer;
 }
+.a-button-remove {
+  background-color: red;
+  color: white;
+  border: red solid;
+  }
+  
+  .a-button-remove:hover {
+  color: red;
+  border: red solid;
+  background-color: white;
+  }

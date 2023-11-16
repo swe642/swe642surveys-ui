@@ -53,4 +53,12 @@ export class SurveyService {
   getSurveyData(): Observable<Survey | null> {
     return this.surveyData.asObservable();
   }
+
+  deleteSurvey(studentId: number) {
+    return this.http.delete(`${this.apiUrl}?id=${studentId}`).pipe(
+      catchError((error) => {
+        return of([]); // Return an empty array in case of an error
+      })
+    )
+  }
 }
