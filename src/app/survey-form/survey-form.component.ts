@@ -4,6 +4,7 @@ import { SurveyService } from '../services/survey.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+// @author Vamshi Gopari, Akhil Krishna Sai Takkella, Purna Chandra Pattipati, Vaishnavi Priya Chennu 
 @Component({
   selector: 'app-survey-form',
   templateUrl: './survey-form.component.html',

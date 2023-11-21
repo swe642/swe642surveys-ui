@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'survey', component: SurveyListComponent }
 ];
 
+// @author Vamshi Gopari, Akhil Krishna Sai Takkella, Purna Chandra Pattipati, Vaishnavi Priya Chennu
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -3,6 +3,7 @@ import { SurveyService } from '../services/survey.service';
 import { Survey } from '../services/survey';
 import { Router } from '@angular/router';
 
+// @author Vamshi Gopari, Akhil Krishna Sai Takkella, Purna Chandra Pattipati, Vaishnavi Priya Chennu
 @Component({
   selector: 'app-survey-list',
   templateUrl: './survey-list.component.html',

@@ -1,3 +1,4 @@
+// @author Vamshi Gopari, Akhil Krishna Sai Takkella, Purna Chandra Pattipati, Vaishnavi Priya Chennu 
 export interface Survey {
   studentId: number;
   firstName: string;
